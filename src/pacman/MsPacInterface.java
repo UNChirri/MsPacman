@@ -37,7 +37,7 @@ public class MsPacInterface {
         PacMover pm = new PacMover();
         DirectionComponent dc = DirectionComponent.easyUse();
         PacAgent pa = new LeftRight();
-        ACMUNAgent age = new ACMUNAgent();
+        ACMUNAgent age = new ACMUNAgent(); //Nada ha cambiado
         TestMonitor tm = new TestMonitor();
         while(true) {
             ElapsedTimer t = new ElapsedTimer();
