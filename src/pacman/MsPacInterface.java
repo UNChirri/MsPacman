@@ -41,7 +41,7 @@ public class MsPacInterface {
         TestMonitor tm = new TestMonitor();
         while(true) {
             ElapsedTimer t = new ElapsedTimer();
-
+            //Pete boludo
             int[] pix = ms.getPixels();
 
             ms.analyseComponents(pix);
