@@ -157,8 +157,8 @@ public class Agent implements Drawable, PacAgent, Constants {
             tmp.mul(20);
             g.drawLine(x, y, x + (int) tmp.x, y + (int) tmp.y);
         }
-        // g.setColor(Color.magenta);
-        // g.fillOvl
+        //g.setColor(Color.magenta);
+        //g.fillOvl;
     }
 
 }

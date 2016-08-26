@@ -13,6 +13,7 @@ public class LeftRight implements PacAgent, Constants {
     public LeftRight() {
         i = 0;
     }
+    
 
     public int move(GameState gs) {
         i++;

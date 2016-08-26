@@ -29,7 +29,7 @@ import stats.StatisticalSummary;
 public class MsPacInterface {
     // delay between each screen capture
     static int delay = 10;
-    static boolean display = false;
+    static boolean display = true;
 
     public static void main(String[] args) throws Exception {
         MsPacInterface ms = new MsPacInterface();
@@ -67,8 +67,8 @@ public class MsPacInterface {
         if (display) sd.updateObjects(al);
     }
 
-    static int left = 530;
-    static int top = 274;
+    static int left = 571;
+    static int top = 268;
     public static int width = 223;
     public static int height = 275;
     int[] pixels;
