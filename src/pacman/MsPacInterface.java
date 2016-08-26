@@ -37,7 +37,7 @@ public class MsPacInterface {
         PacMover pm = new PacMover();
         DirectionComponent dc = DirectionComponent.easyUse();
         PacAgent pa = new LeftRight();
-
+        ACMUNAgent age = new ACMUNAgent();
         TestMonitor tm = new TestMonitor();
         while(true) {
             ElapsedTimer t = new ElapsedTimer();
@@ -48,8 +48,8 @@ public class MsPacInterface {
             // System.out.println(pix.length);
             ss.add(t.elapsed());
             // System.out.println(t);
-            int action = ms.ce.gs.agent.move(ms.ce.gs);
-            // int action = pa.move(ms.ce.gs);
+            //int action = ms.ce.gs.agent.move(ms.ce.gs);
+            int action = age.move();
             pm.move(action);
             tm.log(action, ms.ce.gs);
             if (display) dc.update(action);
