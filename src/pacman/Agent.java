@@ -1,5 +1,6 @@
 package pacman;
 // Ms :V
+// Me la pela
 import static pacman.MsPacInterface.width;
 
 import java.awt.*;
