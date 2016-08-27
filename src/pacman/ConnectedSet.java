@@ -15,6 +15,10 @@ public class ConnectedSet implements Drawable {
     public int px, py;
     boolean valid = false;
 
+    
+    /**
+     * MEtodo para pintar el Extracted.
+     */
     public void draw(Graphics g, int w, int h) {
         // int div = 1;
         validate();
@@ -24,15 +28,15 @@ public class ConnectedSet implements Drawable {
             // System.out.println(width + " : " + height);
         } else {
             if (powerPill() || pill() && true) {
-                g.drawRect(xMin, yMin, width+100, height+100); 
+                g.drawRect(xMin, yMin, width+1, height+1); //tamaño pills
             }
         }
-        // g.fillRect(x, y, 1, 1);
     }
 
     public void validate() {
         if (!valid) {
             width = xMax - xMin;
+            System.out.println(width);
             height = yMax - yMin;
             // px = xMin + (xMax - xMin) / div;
             // py = yMin + (yMax - yMin) / div;
@@ -40,13 +44,13 @@ public class ConnectedSet implements Drawable {
         }
     }
 
-    public boolean ghostLike() {
+    public boolean ghostLike() { // Asegura que es un Fantasma
         validate();
         return ghostColor(fg) && width >= 10 && height >= 10;
         // return width == 13 && height == 13; // fg == MsPacInterface.inky;
     }
 
-    public boolean edible() {
+    public boolean edible() { // Asegura que se puede comer a un fantasma 
         validate();
         return MsPacInterface.edible == fg && width >= 10 && height >= 10;
         // return width == 13 && height == 13; // fg == MsPacInterface.inky;
@@ -59,18 +63,18 @@ public class ConnectedSet implements Drawable {
                 c == MsPacInterface.sue;
     }
 
-    public boolean isPacMan() {
+    public boolean isPacMan() { // Asegura que es MsPacman
         validate();
         return fg == MsPacInterface.pacMan && width >= 10 && height >= 10;
         // return width == 13 && height == 13; // fg == MsPacInterface.inky;
     }
 
-    public boolean pill() {
+    public boolean pill() { // Asegura que es una pildora
         validate();
         return width == 1 && height == 1 && fg == MsPacInterface.pill; // between(width, 2, 3) && between(height, 2, 3);
     }
 
-    public boolean powerPill() {
+    public boolean powerPill() { // Asegura que es una powerPill
         validate();
         return width == 7 && height == 7; // between(width, 2, 3) && between(height, 2, 3);
     }
@@ -127,11 +131,11 @@ public class ConnectedSet implements Drawable {
         return x + " : " + y + " : " + pTot;
     }
 
-    public int dist(Position p) {
+    public int dist(Position p) {		//Distancia de la instancia a p 
         return (int) Math.sqrt(sqr(x - p.x) + sqr(y - p.y));
     }
 
-    public static int sqr(int x) {
+    public static int sqr(int x) { 
         return x * x;
     }
 

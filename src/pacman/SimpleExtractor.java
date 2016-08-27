@@ -37,7 +37,7 @@ public class SimpleExtractor {
     public ArrayList<Drawable> consume(int[] pix, Set<Integer> colors) {
         ArrayList<Drawable> objects = new ArrayList<Drawable>();
 
-        for (int p = 0; p < pix.length; p++) {
+        for (int p = 0; p < pix.length; p++) { // Hace un recorrido en el arreglo de pixeles y la variable p es la posición en el arreglo
             if ((pix[p] & 0xFFFFFF) != BG && colors.contains(pix[p])) {
                 ConnectedSet cs = consume(pix, p, pix[p]);
                 objects.add(cs);

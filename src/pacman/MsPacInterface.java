@@ -48,7 +48,7 @@ public class MsPacInterface {
             ss.add(t.elapsed());
             // System.out.println(t);
             int action = ms.ce.gs.agent.move(ms.ce.gs);
-            //int action = age.move(ms.ce.consume(pix, colors));
+            //int action = age.move();
             pm.move(action);
             tm.log(action, ms.ce.gs);
             if (display) dc.update(action);
