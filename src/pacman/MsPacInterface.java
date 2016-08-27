@@ -41,15 +41,14 @@ public class MsPacInterface {
         TestMonitor tm = new TestMonitor();
         while(true) {
             ElapsedTimer t = new ElapsedTimer();
-            //Pete boludo
             int[] pix = ms.getPixels();
 
             ms.analyseComponents(pix);
             // System.out.println(pix.length);
             ss.add(t.elapsed());
             // System.out.println(t);
-            //int action = ms.ce.gs.agent.move(ms.ce.gs);
-            int action = age.move();
+            int action = ms.ce.gs.agent.move(ms.ce.gs);
+            //int action = age.move(ms.ce.consume(pix, colors));
             pm.move(action);
             tm.log(action, ms.ce.gs);
             if (display) dc.update(action);

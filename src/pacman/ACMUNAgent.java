@@ -1,8 +1,13 @@
 package pacman;
 
 public class ACMUNAgent implements Constants{
-	public int move() {
+	//ConnectedSet sed;
+	public int move(ConnectedSet sed) {
 		// TODO Auto-generated method stub
-		return 2;
+		if(sed.ghostLike()){
+			return 2;
+		}else{
+			return 3;
+		}
 	}
 }

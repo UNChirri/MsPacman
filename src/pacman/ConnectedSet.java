@@ -20,11 +20,11 @@ public class ConnectedSet implements Drawable {
         validate();
         g.setColor(c);
         if (ghostLike()) {
-            g.fillRect(xMin, yMin, width, height);
+            g.fillRect(xMin, yMin, width, height); // tamaño fantasmas
             // System.out.println(width + " : " + height);
         } else {
             if (powerPill() || pill() && true) {
-                g.drawRect(xMin, yMin, width+1, height+1);
+                g.drawRect(xMin, yMin, width+100, height+100); 
             }
         }
         // g.fillRect(x, y, 1, 1);
