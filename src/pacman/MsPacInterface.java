@@ -30,7 +30,25 @@ public class MsPacInterface {
     // delay between each screen capture
     static int delay = 10;
     static boolean display = true;
+    
+    static int left = 571;
+    static int top = 268;
+    public static int width = 223;
+    public static int height = 275;
+    int[] pixels;
+    Robot robot; //se utiiza para testear aplicaciones que requieren el uso de mouse o teclado
+    SimpleExtractor ce;
+    SimpleDisplay sd;
 
+    // these are the integers corresponding to the pixel colours for each game object
+    static int blinky = -65536;
+    static int pinky = -18689;
+    static int inky = -16711681;
+    static int sue = -18859;
+    static int pacMan = -256;
+    static int edible = -14408449;
+    static int pill = -2434305;
+    
     public static void main(String[] args) throws Exception {
         MsPacInterface ms = new MsPacInterface();
         StatisticalSummary ss = new StatisticalSummary();
@@ -65,24 +83,6 @@ public class MsPacInterface {
 
         if (display) sd.updateObjects(al);
     }
-
-    static int left = 571;
-    static int top = 268;
-    public static int width = 223;
-    public static int height = 275;
-    int[] pixels;
-    Robot robot;
-    SimpleExtractor ce;
-    SimpleDisplay sd;
-
-    // these are the integers corresponding to the pixel colours for each game object
-    static int blinky = -65536;
-    static int pinky = -18689;
-    static int inky = -16711681;
-    static int sue = -18859;
-    static int pacMan = -256;
-    static int edible = -14408449;
-    static int pill = -2434305;
 
     static HashSet<Integer> colors = new HashSet<Integer>();
     static {
