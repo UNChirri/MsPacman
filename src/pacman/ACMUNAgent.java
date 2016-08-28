@@ -4,6 +4,7 @@ import games.math.Vector2d;
 
 public class ACMUNAgent implements Constants{
 	Vector2d nearPill;
+	private int x;
 	//ConnectedSet sed;
 	public int move(int fg) {
 		// TODO Auto-generated method stub
@@ -17,5 +18,8 @@ public class ACMUNAgent implements Constants{
 			return 3;
 		}
 		return 2;
+	}
+	public int getX(){
+		return this.x;
 	}
 }

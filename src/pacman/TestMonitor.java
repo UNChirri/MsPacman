@@ -28,9 +28,9 @@ public class TestMonitor {
         bw = new PrintWriter(new FileWriter("log.txt"));
     }
 
-    public void log(int dir, GameState gs) throws Exception {
+    public void log(int dir, ACMUNState gs) throws Exception {
         long elapsed = System.currentTimeMillis() - start;
-        bw.println(dir + "\t " + gs.agent.x + "\t " + elapsed);
+        bw.println(dir + "\t " + gs.getAgent().getX() + "\t " + elapsed);
         start = System.currentTimeMillis();
         n++;
         if (n > limit) {

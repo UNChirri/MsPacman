@@ -6,6 +6,7 @@ import games.math.Vector2d;
 
 //pls work :'v
 public class ACMUNState implements Drawable {
+	private ACMUNAgent agent;
 	//Como se encuentra el mundo 
 	public ACMUNState() {
 		// TODO Auto-generated constructor stub
@@ -20,7 +21,11 @@ public class ACMUNState implements Drawable {
 	}
 
 
-
+	public void reset() {
+		//to do
+        //closestPill = null;
+    }
+	
 	public void update(ConnectedSet cs, int[] pix) {
         if (cs.isPacMan()) {
         } else if (cs.ghostLike()) {
@@ -39,7 +44,9 @@ public class ACMUNState implements Drawable {
 
     }
 
-
+	public ACMUNAgent getAgent(){
+		return this.agent;
+	}
 
 
 
