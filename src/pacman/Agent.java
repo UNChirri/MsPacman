@@ -95,7 +95,7 @@ public class Agent implements Drawable, PacAgent, Constants {
                 tmp.add(vDirs[i]);
                 // System.out.println(i + "\t " + eval(tmp, gs));
                 // now call eval, and update
-                double curScore = eval(tmp, gs);
+                double curScore = eval(tmp, gs); //Evalua entre el temporal y el estado.closetspill
                 if (curScore < best) {
                     move = i;
                     best = curScore;
@@ -118,7 +118,7 @@ public class Agent implements Drawable, PacAgent, Constants {
 
     public double eval(Vector2d pos, GameState gs) {
         if (gs.closestPill != null) {
-            return pos.dist(gs.closestPill);
+            return pos.dist(gs.closestPill); //retorna la distancia entre la posición actual de pacman y la pildora más cercana
         } else {
             return 0;
         }

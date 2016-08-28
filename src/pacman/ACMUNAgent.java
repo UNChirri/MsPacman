@@ -1,6 +1,9 @@
 package pacman;
 
+import games.math.Vector2d;
+
 public class ACMUNAgent implements Constants{
+	Vector2d nearPill;
 	//ConnectedSet sed;
 	public int move(int fg) {
 		// TODO Auto-generated method stub

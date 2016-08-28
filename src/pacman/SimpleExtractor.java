@@ -8,9 +8,7 @@ public class SimpleExtractor {
     // this will hunt through a pixel array
     // adding all the connected components to
     // itself
-
     // the background - components of this will not be created
-
     // this needs to be modified in order to keep track of existing agents,
     // rather than making a new agent every time that consume() is called
 
@@ -21,17 +19,18 @@ public class SimpleExtractor {
     int w, h;
     IntStack stack;
     HashSet uniques;
-    // Agent agent;
-    GameState gs;
-
+    //Agent agent;
+    //GameState gs;
+    ACMUNState gs;
     public SimpleExtractor(int w, int h) {
         this.w = w;
         this.h = h;
         int size = 4 * w * h;
         stack = new IntStack(size);
         uniques = new HashSet();
-        // agent = new Agent();
-        gs = new GameState();
+        //agent = new Agent();
+        //gs = new GameState();
+        gs = new ACMUNState();
     }
 
     public ArrayList<Drawable> consume(int[] pix, Set<Integer> colors) {
@@ -48,21 +47,20 @@ public class SimpleExtractor {
         return objects;
     }
 
-
     public ConnectedSet consume(int[] pix, int p, int fg) {
         ConnectedSet cs = new ConnectedSet(p % w, p / w, fg);
-// push the current pixel on the stack
+        // push the current pixel on the stack
         stack.reset();
-// int p = x + y * w;
+        // int p = x + y * w;
         stack.push(p);
-// int count = 0;
-// System.out.println( stack );
+		// int count = 0;
+        // System.out.println( stack );
         while (!stack.isEmpty()) {
-// count++;
+        	// count++;
             p = stack.pop();
             if (pix[p] == fg) {
-// System.out.println(cx + " : " + cy + " : " + pix[p] );
-// System.in.read();
+            	// System.out.println(cx + " : " + cy + " : " + pix[p] );
+            	// System.in.read();
                 cs.add(p % w, p / w, p, pix[p]);
                 pix[p] = 0;
                 int cx = p % w;

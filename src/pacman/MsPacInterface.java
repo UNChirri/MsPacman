@@ -65,10 +65,10 @@ public class MsPacInterface {
             // System.out.println(pix.length);
             ss.add(t.elapsed());
             // System.out.println(t);
-            int action = ms.ce.gs.agent.move(ms.ce.gs);
-            //int action = age.move();
+            //int action = ms.ce.gs.agent.move(ms.ce.gs);
+            int action = age.move(4);
             pm.move(action);
-            tm.log(action, ms.ce.gs);
+            tm.log(action, ms.ce.gs); 
             if (display) dc.update(action);
             Thread.sleep(delay);
             // pm.randMove();
